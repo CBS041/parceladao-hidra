@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.cache/
+
+.env
+.env.*
+!.env.example
+
+data/*.db
+uploads/*
+!uploads/.gitkeep
+
+.idea/
+
+*.log
+*.err

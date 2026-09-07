@@ -1,0 +1,36 @@
+{
+  "name": "parceladao-hidra",
+  "version": "1.0.0",
+  "description": "Sistema web para gerenciamento de inscrições em eventos, com painel administrativo, API REST, autenticação e upload de comprovantes.",
+  "private": true,
+  "keywords": ["bun", "express", "sqlite", "rest-api", "tailwindcss", "webpack", "full-stack"],
+  "license": "MIT",
+  "author": "Cassiano Brito dos Santos",
+  "scripts": {
+    "start": "webpack serve --open --config webpack.config.dev.js",
+    "api": "bun run backend/server.js",
+    "dev:full": "concurrently \"bun run api\" \"bun run start\"",
+    "css:watch": "tailwindcss -c tailwind.config.js -i ./css/tailwind.src.css -o ./css/tailwind.css --watch",
+    "css:build": "tailwindcss -c tailwind.config.js -i ./css/tailwind.src.css -o ./css/tailwind.css --minify",
+    "build": "tailwindcss -c tailwind.config.js -i ./css/tailwind.src.css -o ./css/tailwind.css --minify && webpack --config webpack.config.prod.js",
+    "smoke:api": "node ./backend/scripts/api-smoke-test.js",
+    "reset:admin": "bun run ./backend/scripts/reset-admin.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "multer": "^2.1.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^9.1.2",
+    "copy-webpack-plugin": "^11.0.0",
+    "html-webpack-plugin": "^5.6.0",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4",
+    "webpack-merge": "^5.10.0"
+  }
+}

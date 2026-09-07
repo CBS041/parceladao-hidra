@@ -1,0 +1,26 @@
+[Unit]
+Description=Backup diario do Parceladao
+After=network.target
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/parceladao.env
+EnvironmentFile=-/etc/parceladao-ops.env
+WorkingDirectory=/opt/parceladao
+
+# Executa com mascara restritiva para arquivos de backup e temporarios.
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectHome=true
+ProtectSystem=full
+ProtectControlGroups=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+LockPersonality=true
+RestrictSUIDSGID=true
+RestrictNamespaces=true
+
+TimeoutStartSec=15min
+ExecStart=/usr/bin/env bash /opt/parceladao/backend/scripts/backup-parceladao.sh

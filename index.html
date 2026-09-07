@@ -1,0 +1,142 @@
+<!doctype html>
+<html class="no-js" lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Parceladão da Hidra</title>
+  <link rel="stylesheet" href="css/tailwind.css">
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="Inscrição para o Parceladão da Hidra com pagamento facilitado.">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:image:alt" content="">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+
+  <main class="min-h-screen bg-black px-3 py-8 text-slate-100 sm:px-6 sm:py-10 lg:px-8">
+    <div class="mx-auto w-full max-w-4xl space-y-6 sm:space-y-8">
+      <header class="rounded-2xl border border-emerald-500/40 bg-zinc-950/80 p-5 shadow-2xl shadow-emerald-500/10 sm:p-8">
+        <p class="mb-2 inline-flex rounded-full border border-emerald-400/60 bg-emerald-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-emerald-300">BEM-VINDOS AO PARCELADÃO DA HIDRA</p>
+        <h1 class="text-2xl font-bold tracking-tight text-emerald-300 sm:text-4xl">Parceladão da Hidra</h1>
+        <p class="mt-3 text-sm text-slate-300 sm:text-lg">Garanta sua vaga no evento com pagamento facilitado</p>
+      </header>
+
+      <section class="grid gap-4 sm:grid-cols-2">
+        <article class="rounded-xl border border-zinc-800 bg-zinc-900 p-5">
+          <h2 class="mb-3 text-sm font-semibold uppercase tracking-wide text-emerald-300">Informações importantes</h2>
+          <ul class="space-y-2 text-sm text-slate-200">
+            <li>Valor mínimo de depósito: <strong>R$ 100,00 por mês</strong></li>
+            <li>Data limite para quitação via PIX: <strong>06/11/2026</strong></li>
+            <li>Pagamento mínimo de <strong>R$ 700,00 até 09/10/2026</strong> para manter as condições</li>
+            <li>Valor promocional para participantes da poupança</li>
+          </ul>
+        </article>
+        <article class="rounded-xl border border-zinc-800 bg-zinc-900 p-5">
+          <h2 class="mb-3 text-sm font-semibold uppercase tracking-wide text-emerald-300">Pacote completo</h2>
+          <ul class="space-y-2 text-sm text-slate-200">
+            <li>✓ Transporte ida (open bar) e volta</li>
+            <li>✓ Hospedagem</li>
+            <li>✓ Passaporte para todas as festas (3 diurnas + 2 noturnas open bar)</li>
+            <li>✓ Kit de produtos</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="rounded-xl border border-red-500/40 bg-red-900/20 p-5 text-sm text-red-100">
+        <h2 class="mb-2 font-semibold uppercase tracking-wide text-red-300">Aviso importante</h2>
+        <p>Não fazemos devolução dos valores poupançados, pois os valores são aplicados mensalmente para arcar com os custos do evento. Em caso de desistência, o repasse do pacote é de responsabilidade do participante. Haverá cobrança mensal das faturas.</p>
+      </section>
+
+      <section class="mx-auto max-w-2xl overflow-hidden rounded-2xl border border-emerald-500/30 bg-zinc-950/90 shadow-xl shadow-emerald-500/10">
+        <img src="img/uni.jpeg" alt="Banner Hidra no Uni Poupança 2K26" width="600" height="600" loading="lazy" decoding="async" class="h-auto w-full object-contain">
+      </section>
+
+      <section class="rounded-xl border border-zinc-800 bg-zinc-900 p-5 text-sm text-slate-200">
+        <h2 class="mb-3 text-sm font-semibold uppercase tracking-wide text-emerald-300">Informação de pagamento</h2>
+        <div class="grid gap-2 sm:grid-cols-3">
+          <p class="break-all"><span class="text-slate-400">PIX:</span> repetilicosaaasup@gmail.com</p>
+          <p><span class="text-slate-400">Banco:</span> Nubank</p>
+          <p><span class="text-slate-400">Nome:</span> Bruna Miranda de Paula</p>
+        </div>
+      </section>
+
+      <section class="rounded-2xl border border-emerald-500/30 bg-zinc-950/90 p-6 shadow-xl shadow-emerald-500/10 sm:p-8">
+        <div class="mb-6">
+          <div class="mb-2 flex items-center justify-between text-xs font-semibold uppercase tracking-wide">
+            <span class="text-emerald-300">Progresso do formulário</span>
+            <span id="progress-label" class="text-slate-300">0%</span>
+          </div>
+          <div class="h-2 w-full overflow-hidden rounded-full bg-zinc-800">
+            <div id="progress-bar" class="h-full w-0 rounded-full bg-emerald-500 transition-all duration-300"></div>
+          </div>
+        </div>
+
+        <form id="registration-form" class="space-y-5" novalidate>
+          <div>
+            <label for="fullName" class="mb-2 block text-sm font-medium text-slate-200">Nome completo *</label>
+            <input id="fullName" name="fullName" type="text" required class="w-full rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-base text-slate-100 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/40" placeholder="Digite seu nome completo">
+            <p id="fullName-error" class="mt-1 hidden text-xs text-red-300"></p>
+          </div>
+
+          <div>
+            <label for="phone" class="mb-2 block text-sm font-medium text-slate-200">Número de telefone *</label>
+            <input id="phone" name="phone" type="tel" inputmode="numeric" required class="w-full rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-base text-slate-100 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/40" placeholder="(41) 99999-9999">
+            <p id="phone-error" class="mt-1 hidden text-xs text-red-300"></p>
+          </div>
+
+          <div>
+            <label for="savedAmount" class="mb-2 block text-sm font-medium text-slate-200">Valor poupado (R$) *</label>
+            <input id="savedAmount" name="savedAmount" type="number" min="0" step="0.01" required class="w-full rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-base text-slate-100 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/40" placeholder="Ex: 100.00">
+            <p id="savedAmount-error" class="mt-1 hidden text-xs text-red-300"></p>
+          </div>
+
+          <div>
+            <label for="depositDate" class="mb-2 block text-sm font-medium text-slate-200">Data do depósito *</label>
+            <input id="depositDate" name="depositDate" type="date" required class="w-full rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-base text-slate-100 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/40">
+            <p id="depositDate-error" class="mt-1 hidden text-xs text-red-300"></p>
+          </div>
+
+          <div>
+            <label for="receipt" class="mb-2 block text-sm font-medium text-slate-200">Anexo do comprovante *</label>
+            <input id="receipt" name="receipt" type="file" accept="image/*,.pdf" required class="block w-full rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-sm text-slate-200 file:mr-4 file:rounded-lg file:border-0 file:bg-emerald-500 file:px-3 file:py-2 file:text-sm file:font-semibold file:text-zinc-900 hover:file:bg-emerald-400">
+            <p class="mt-1 text-xs text-slate-400">Formatos aceitos: imagem ou PDF (máx. 5MB)</p>
+            <p id="receipt-error" class="mt-1 hidden text-xs text-red-300"></p>
+
+            <div id="receipt-preview" class="mt-3 hidden rounded-xl border border-zinc-800 bg-zinc-900/80 p-3">
+              <p class="mb-2 text-xs font-semibold uppercase tracking-wide text-emerald-300">Prévia do comprovante</p>
+              <img id="receipt-preview-image" alt="Prévia do comprovante" class="hidden max-h-64 w-full rounded-lg object-contain">
+              <div id="receipt-preview-pdf" class="hidden rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-sm text-slate-200">
+                <p class="font-medium text-emerald-300">Arquivo PDF pronto para envio</p>
+                <p id="receipt-preview-pdf-name" class="mt-1 break-all text-xs text-slate-300"></p>
+                <iframe id="receipt-preview-pdf-frame" title="Prévia do PDF" class="mt-2 hidden h-56 w-full rounded-md border border-zinc-600 bg-zinc-900"></iframe>
+              </div>
+              <p id="receipt-preview-meta" class="mt-2 text-xs text-slate-400"></p>
+            </div>
+          </div>
+
+          <button id="submit-button" type="submit" class="inline-flex w-full items-center justify-center rounded-xl bg-emerald-500 px-5 py-3 text-base font-semibold text-zinc-900 transition hover:bg-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-300 focus:ring-offset-2 focus:ring-offset-zinc-950 disabled:cursor-not-allowed disabled:opacity-60">
+            <span id="submit-text">Enviar inscrição</span>
+          </button>
+
+          <p id="form-status" class="hidden rounded-lg px-3 py-2 text-sm"></p>
+        </form>
+      </section>
+    </div>
+  </main>
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>
